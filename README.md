@@ -1,4 +1,8 @@
-# Transcyclopedia 🌍🚌
+<p align="center">
+  <img src="https://github.com/dinwun450/Transcyclopedia/blob/main/public/transcyclopediaLogo.png" alt="Description" width="600">
+</p>
+
+---
 
 A modern, location-aware public transit information dashboard built with React and Vite. Transcyclopedia provides real-time transit data including routes, stops, departures, service alerts, and an interactive map—all based on your current location.
 
