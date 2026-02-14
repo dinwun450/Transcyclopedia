@@ -1,0 +1,46 @@
+.light_mode {
+    background-color: #dedede;
+    color: black;
+    transition: 0.4s;
+}
+
+
+.light_mode .searchbars::placeholder { color: gray; opacity: 1; }
+.light_mode .searchbars::-webkit-input-placeholder { color: gray; opacity: 1; }
+.light_mode .searchbars::-moz-placeholder { color: gray; opacity: 1; }       /* Firefox 19+ */
+.light_mode .searchbars:-ms-input-placeholder { color: gray; opacity: 1; }    /* IE 10+ */
+.light_mode .searchbars::-ms-input-placeholder { color: gray; opacity: 1; }   /* Edge */
+
+/* Gradient panels for headers and alerts use CSS variables so theme toggles affect them */
+.allcover,
+.allcoveralerts {
+    --grad-start: rgba(255,255,255,0.02);
+    --grad-end: rgba(255,255,255,0.04);
+    background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
+    color: var(--text, #000);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark-mode overrides for the same elements */
+.dark .allcover,
+.dark .allcoveralerts {
+    --grad-start: rgba(255,255,255,0.02);
+    --grad-end: rgba(255,255,255,0.04);
+    background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
+    color: var(--text, #e6eef6);
+}
+
+/* Light-mode overrides for explicit .light_mode elements (kept for compatibility) */
+.light_mode .searchbars {
+    color: black !important;
+    border: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+/* Ensure the 'Get Location' button text follows the visible theme */
+.light_mode #getCurrentLocation {
+    color: black !important;
+}
+
+.dark #getCurrentLocation {
+    color: white !important;
+}

@@ -1,0 +1,133 @@
+@media (max-width: 988px) {
+    .left_navbar {
+        display: none;
+        width: 35%;
+        background-color: #666;
+        z-index: 2;
+    }
+
+    .light_mode .left_navbar {
+        background-color: #aaa;
+    }
+
+    .left_navbar li {
+        width: 97%;
+    }
+
+    .left_navbar li a.closebtn {
+        display: block;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .left_navbar .x:hover {
+        background-color: #39bf5898;
+        transition: 0.5s;
+    }
+
+    .moreoptions {
+        display: flex;
+    }
+}
+
+/* hamburger button - hidden on desktop, shown on small screens */
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 988px) {
+    .hamburger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 12px;
+        left: -18px; /* stick out from the left edge */
+        width: 64px; /* larger so it visually protrudes */
+        height: 48px;
+        padding-left: 8px;
+        border-radius: 0 8px 8px 0; /* tab-like shape */
+        background: rgba(0,0,0,0.75);
+        color: #fff;
+        z-index: 1400;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    .left_navbar {
+        /* overlay anchored to the left; leave room on the right for the hamburger/button */
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: calc(100% - 64px);
+        max-width: 360px;
+        overflow-y: auto;
+        display: none;
+        z-index: 1200;
+        transition: transform 220ms ease, opacity 220ms ease;
+    }
+
+    /* when shown via JS we can set display:block; keep transform for potential slide-in */
+    .left_navbar[style] {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    #light_or_dark {
+        display: none;
+    }
+
+    /* make overview sections stack and align with equal widths */
+    .gridoverview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .time_date_weather, .routes, .agencies, .stops {
+        width: 100%;
+        max-width: 720px;
+        margin: 0 auto;
+        float: none;
+        position: static;
+        top: auto;
+        box-sizing: border-box;
+    }
+
+    /* let stops grow naturally instead of fixed height */
+    .stops {
+        height: auto;
+    }
+
+    .left_navbar {
+        width: 100%;
+        max-width: none; /* override earlier max-width so navbar can span full width */
+        left: 0;
+        right: 0;
+    }
+
+    .light_dark_responsive {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: rgba( 255, 255, 255, 0.25 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        padding: 10px 0;
+        position: relative;
+        top: 30px;
+    }
+
+    #clickable_element {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}

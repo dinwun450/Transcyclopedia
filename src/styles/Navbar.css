@@ -1,0 +1,84 @@
+.left_navbar {
+    width: 22%;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 16px;
+    position: sticky;
+    padding: 10px;
+    font-size: 18px;
+    list-style-type: none;
+}
+
+.left_navbar li {
+    width: 20vw;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.left_navbar li.active {
+    background-color: #0398fc98;
+}
+
+.left_navbar li.active a {
+    color: white;
+}
+
+.left_navbar li:hover:not(.active, .x) {
+    background-color: #39bf5898;
+    transition: 0.5s;
+}
+
+.left_navbar li a.closebtn {
+    display: none;
+}
+
+.left_navbar li a {
+    display: block;
+    width: 100%;
+    box-sizing: inherit;
+    min-width: 0;
+    /* allow text to wrap instead of forcing horizontal overflow */
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    text-decoration: none;
+    color: white;
+}
+
+/* ensure children inherit the container box-sizing to avoid width + padding overflow */
+.left_navbar *,
+.left_navbar *::before,
+.left_navbar *::after {
+    box-sizing: inherit;
+}
+
+.light_mode .left_navbar li a {
+    color: black;
+}
+
+.logo {
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    /* color: white; */
+}
+
+.globe {
+    color: rgb(10, 161, 45);
+    font-size: 15px;
+}
+
+.copyright {
+    /* color: white; */
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: 100;
+}
