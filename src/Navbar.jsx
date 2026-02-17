@@ -1,5 +1,4 @@
 import { openTab, closeNav } from './MainConts.jsx';
-import { getDateAndTime } from './scripts/timeandweather.jsx';
 export default function Navbar({ setActiveTab }) {
     return (
         <ul className="left_navbar">
@@ -12,7 +11,8 @@ export default function Navbar({ setActiveTab }) {
             <li className="tablinks" onClick={(e) => openTab(e, 'intermap', setActiveTab)}><a href="#"><i className="fa-regular fa-map"></i>&nbsp;&nbsp;Map</a></li>
             <li className="tablinks" onClick={(e) => openTab(e, 'about', setActiveTab)}><a href="#"><i className="fa-solid fa-circle-info"></i>&nbsp;&nbsp;About</a></li>
             <li className="x"><a href="#" className="closebtn" onClick={(e) => { e.preventDefault(); closeNav(); }}>&times;&nbsp;&nbsp;Close</a></li>
-            <p className="copyright">&copy; {getDateAndTime().yearNumber} Transcyclopedia. Created by Dino Wun.</p>
+            <p className="copyright">Your encyclopedia for public transit, created by Dino Wun.</p>
         </ul>
     );
+
 }
